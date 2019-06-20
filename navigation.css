@@ -1,0 +1,105 @@
+/* Nav Bar */
+#profile {
+    border-radius: 10%;
+    width: 30%;
+    height: 30%;
+}
+.home-first {
+    margin-left: 10px;
+    background: -webkit-linear-gradient(#215F00, #E4E4D9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.home-last {
+    margin-left: -4px;
+    padding-left: 0px;
+    background: -webkit-linear-gradient(#C21500, #FFC500);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.home-first, .home-last {
+    display: inline-block;
+    padding-top: 9px;
+}
+.home-first p, .home-last p {
+    font-size: 25px;
+    font-family: 'Dosis', sans-serif;
+}
+.home-first p::first-letter, .home-last p::first-letter {
+    font-size: 120%;
+}
+.nav-container {
+    width: 94%;
+    margin: 0 auto;
+    padding: 0;
+}
+header {
+    width: 100%;
+    background: #272727;
+    height: auto;
+}
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.body-container {
+    margin-right: 9%;
+    margin-left: 9%;
+    text-align: center;
+    font-family: Avant Garde, Avantgarde, Century Gothic, Apple Gothic, sans-serif;
+    color: #D1E8E2;
+}
+.logo {
+    float: left;
+    border-radius: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+nav {
+    float: right;
+    color: #5680E9;
+    font-family: 'Raleway', sans-serif;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li {
+    display: inline-block;
+    position: relative;
+    margin-left: 50px;
+    padding-top: 18px;
+}
+nav a {
+    text-transform: uppercase;
+    font-size: 20px;
+    text-decoration: none;
+    color: #FFCB9A;
+}
+nav a:hover {
+    color: #D9B08C;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #FFCB9A;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+    
+    transition: all ease-in-out 250ms;
+}
+nav a:hover::before {
+    width: 100%;
+}
+nav a:visited {
+    color: #FFCB9A;
+}

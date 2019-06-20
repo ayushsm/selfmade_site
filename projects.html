@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:thin" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:thin" rel="stylesheet">
+        <link rel="stylesheet" href="swiper-master/dist/css/swiper.min.css">
+        <link rel="stylesheet" href="navigation.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+        <style>
+            html {
+                overflow: hidden;
+            }
+            html, body {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            body {
+                font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                color: #000;
+                overflow: auto;
+                background-image: linear-gradient(to bottom, #B993D6, #8CA6DB);
+            }
+            .swiper-wrapper {
+                -webkit-transition-timing-function: linear !important; 
+                -o-transition-timing-function: linear !important; 
+                transition-timing-function: linear !important; 
+            }
+            .swiper-container {
+                width: 100%;
+                flex: 1;
+                background: transparent;
+                text-align: center;
+            }
+            .swiper-slide {
+                top: 25%;
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                text-align: center;
+                height: 50%;
+                background: transparent;
+                border-radius: 5%;
+                width: 28%;
+                /* opacity: 0.5; */
+                /* Center slide text vertically */
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+            .swiper-slide-active {
+                opacity: 1;
+            }
+            .swiper-slide-content:hover {
+                cursor: pointer;
+            }
+            .swiper-slide-content:hover{
+                -moz-transform: scale(1.05);
+                -webkit-transform: scale(1.05);
+                -o-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                -webkit-transform: scale(1.05);
+                transform: scale(1.05);
+            }
+            .swiper-slide-content {
+                text-align: center;
+                -webkit-transition: transform 0.5s ease-in-out;
+                -moz-transition: transform 0.5s ease-in-out;
+                transition: transform 0.5s ease-in-out;
+            }
+            .swiper-slide-content h1 {
+                font-family: Noto Sans, sans-serif;
+            }
+            .swiper-slide-content p {
+                font-family: Optima, sans-serif;
+            }
+            #next-button, #prev-button {
+                zoom: 0.8;
+                display: none;
+            }
+            .swiper-button-prev {
+                left: 5%;
+                /* background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23FFCB9A'%2F%3E%3C%2Fsvg%3E") !important; */
+                background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E") !important;
+            }
+            .swiper-button-next {
+                right: 5%;
+                /* background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23FFCB9A'%2F%3E%3C%2Fsvg%3E") !important; */
+                background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E") !important;
+            }
+            .image {
+                width: 200px;
+                height: 200px;
+                overflow: hidden;
+                border-radius: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                border: 1px solid black;
+            }
+            .image .project-image {
+                width: 100%;
+                height: 100%;
+            }
+            #pic5 {
+                transform: translate(-20px, 0);
+                width: 120%;
+            }
+            button {
+                padding: 0 20px 0 20px;
+                border: solid white;
+                border-width: thin;
+                border-radius: 20px;
+                position: absolute;
+                bottom: 12%;
+                text-transform: uppercase;
+                font-family: 'Raleway', sans-serif;
+                font-size: 24px;
+                color: white;
+                outline: none;
+            }
+            #stop-button {
+                left: 24%;
+                transform: translate(-24%, 0);
+                background-image: linear-gradient(to right, #f2709c, #ff9472);
+            }
+            #start-button {
+                right: 24%;
+                transform: translate(24%, 0);
+                background-image: linear-gradient(to left, #f2709c, #ff9472);
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header"></header>
+        <div class="swiper-container" >
+            <button onclick="showButtons()" id="stop-button">Control the Wheel</button>
+            <button onclick="hideButtons()" id="start-button">Restart Autoplay</button>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" id="1" onclick="window.location.href='blog.html'">
+                    <div class="swiper-slide-content">
+                        <div class="image">
+                            <img src="images/projects/math.jpeg" class="project-image">
+                        </div>
+                        <h1>Grade Calculator</h1>
+                        <p>You feelin' lucky?</p>
+                    </div>
+                </div>
+                <div class="swiper-slide" id="2" onclick="window.location.href='blog.html'">
+                    <div class="swiper-slide-content">
+                        <div class="image">
+                            <img src="images/projects/stocks.jpg" class="project-image">
+                        </div>
+                        <h1>Quant Trading</h1>
+                        <p>Wall Street 2.0</p>
+                    </div>
+                </div>
+                <div class="swiper-slide" id="3" onclick="window.location.href='blog.html'">
+                    <div class="swiper-slide-content">
+                        <div class="image">
+                            <img src="images/receipt2.jpg" class="project-image">
+                        </div>
+                        <h1>Receipt Reader</h1>
+                        <p>The digital age is here</p>
+                    </div>   
+                </div>
+                <div class="swiper-slide" id="4" onclick="window.location.href='blog.html'">
+                    <div class="swiper-slide-content">
+                        <div class="image">
+                            <img src="images/projects/favicon.png" class="project-image">
+                        </div>
+                        <h1>Website</h1>
+                        <p>Too many hours were put into this</p>
+                    </div>   
+                </div>
+                <div class="swiper-slide" id="5" onclick="window.location.href='blog.html'">
+                    <div class="swiper-slide-content">
+                        <div class="image">
+                            <img src="images/projects/uiux.png" class="project-image" id="pic5">
+                        </div>
+                        <h1>UI/UX Dev</h1>
+                        <p>The customer is king</p>
+                    </div>   
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next" id="next-button"></div>
+            <div class="swiper-button-prev" id="prev-button"></div>
+        </div>
+
+        <script src="swiper-master/dist/js/swiper.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                initialSlide: 2,
+                slidesPerView: 'auto',
+                freeMode: true,
+                mousewheel: true,
+                centeredSlides: true,
+                // slidesPerColumn: 2,
+                // slidesPerColumnFill: 'row',
+                speed: 4000,
+                pagination: {
+                    type: 'none',
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 1,
+                },
+                loop: true,
+            });
+        </script>
+        <script>
+            function showButtons() {
+                document.getElementById("next-button").style.display = "inline";
+                document.getElementById("prev-button").style.display = "inline";
+                console.log(this.swiper.autoplay);
+                this.swiper.autoplay.stop();
+                console.log(this.swiper.autoplay);
+                this.swiper.params.freeMode = false;
+                this.swiper.params.centeredSlides = true;
+                this.swiper.params.speed = 1000;
+            }
+        </script>
+        <script>
+            function hideButtons() {
+                this.swiper.autoplay.start();
+                this.swiper.params.freeMode = true;
+                this.swiper.params.centeredSlides = false;
+                this.swiper.params.speed = 4000;
+                document.getElementById("next-button").style.display = "none";
+                document.getElementById("prev-button").style.display = "none";
+            }
+        </script>
+        <script>
+            $(document).ready(function() {
+                $("#header").load("navigation.html");
+            });
+        </script>
+    </body>
+</html>

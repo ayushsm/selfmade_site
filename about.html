@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:thin" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:thin" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dosis:200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="swiper-master/dist/css/swiper.min.css">
+        <link rel="stylesheet" href="navigation.css">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+        <script>
+            $(function() {
+                $("#navigation").load("navigation.html");
+            });
+        </script>
+
+        <style>
+            /* Body Customization */
+            html {
+                overflow: hidden;
+                height: 100%;
+            }
+            html::-webkit-scrollbar {
+                width: 0px;
+                background: transparent;
+            }
+            body {
+                height: 100%;
+                overflow: auto;
+                margin: 0;
+                background-image: linear-gradient(to bottom, #B993D6, #8CA6DB);
+            }
+            p {
+                text-align: left;
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+            }
+
+            /* Title Customization */
+            h1 {
+                color: #404040;
+                font-family: 'Open Sans', sans-serif;
+                text-transform: uppercase;
+            }
+            h2 {
+                color: #808080;
+                font-family: 'Open Sans', sans-serif;
+                text-transform: uppercase;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: #787878;
+            }
+
+            /* Slideshow */
+            .slideshow-container {
+                margin: 80px auto;
+                position: relative;
+                width: 880px;
+                height: 560px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                border: 2px solid black;
+            }
+            .slide {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            .slide img {
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header"></header>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="images/slideshow/1.jpg">
+            </div>
+            <div class="slide">
+                <img src="images/slideshow/2.jpg">
+            </div>
+            <div class="slide">
+                <img src="images/slideshow/3.jpg">
+            </div>
+            <div class="slide">
+                <img src="images/slideshow/4.jpg">
+            </div>
+            <div class="slide">
+                <img src="images/slideshow/5.jpg">
+            </div>
+            <div class="slide">
+                <img src="images/slideshow/6.jpg">
+            </div>
+        </div>
+        <div class="body-container">
+            <h1>About Me</h1>
+            <p>Hi there! If you haven't met me before, my name is Ayush Maganahalli and I'm currently studying at UC Berkeley, where I'm majoring in Electrical
+                Engineering and Computer Science. This summer, I'm teaching the Machine Architecture class as the Head Teaching Assistant.</p>
+            <h2>Background</h2>
+            <p> I was born and raised in San Ramon, California and came to Berkeley after I graduated from Dougherty Valley High, so you can really 
+                see that I expanded my horizons by going to college 30 minutes away. When I came to Berekley, I had planned to become a bioengineer 
+                but over the course of taking a couple CS classes and <i>one</i> Organic Chem course, I realized that my path lay in the direction of CS (or 
+                basically any field that didn't involve OChem).
+            </p>
+            <h2>Hobbies and Activities</h2>
+            <p>In high school, I was heavily involved in Speech and Debate, where I competed in Varsity Lincoln-Douglass on the national circuit as well as
+                robotics, where I competed in the FTC (FIRST Tech Challenge) Division. Once I came to college, I ended up joining <a href="https://badminton.berkeley.edu/">
+                Cal Badminton</a> my freshman year. Later, I would end up joining <a href="https://www.codeology.club/">Codeology</a> and <a href="https://ethicalapparel.org/">
+                EthiCAL</a>. Whenver I'm not studying (which isn't as often as I'd like) or participating in one of these clubs, I'm often playing chess, soccer, 
+                or some video games. I also love to travel (fun fact: I've been to 4 continents and 14 countries, with plans to go to more) and read when I can, 
+                but growing up sure does keep you busy (and tired???).
+            </p>
+        </div>
+
+        <script>
+            $(".slideshow-container > div:gt(0)").hide();
+            setInterval(function() {
+                $('.slideshow-container > div:first').fadeOut(1000).next().fadeIn(1000).end().appendTo('.slideshow-container');
+            }, 4000);
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $("#header").load("navigation.html");
+            });
+        </script>
+    </body>
+</html>
