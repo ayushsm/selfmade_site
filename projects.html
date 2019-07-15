@@ -258,9 +258,16 @@
             }
         </script>
         <script>
-            $(document).ready(function() {
-                $("#header").load("navigation.html");
-            });
+            const invocation = new XMLHttpRequest();
+            const url = 'navigation.html';
+            if (invocation) {    
+                invocation.open('GET', url, true);
+                invocation.onreadystatechange = handler;
+                invocation.send(); 
+            }
+            // $(document).ready(function() {
+            //     $("#header").load("navigation.html");
+            // });
         </script>
     </body>
 </html>
