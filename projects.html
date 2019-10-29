@@ -152,32 +152,42 @@
                 transform: translate(24%, 0);
                 background-image: linear-gradient(to left, #f2709c, #ff9472);
             }
-            #title {
-                text-align: center;
-                padding: 0px;
-                margin: 0px;
+            #titlespan {
+                /* width: fit-content; */
+                /* display: inline-block; */
+                /* text-align:center; */
+                /* display: inline-block; */
+                margin: auto;
+                display: table;
                 font-family: Noto Sans, sans-serif;
                 font-size: 70px;
+                border-style: none none double none;
             }
-            #pagedescription {
-                /* border: red solid 1px; */
-                padding: 0;
-                margin: 0;
+            #pagedescription{
+                padding-top: 10px;
+            }
+            #pagedescription p {
+                padding: 5px 20px 0px 20px;
+                text-align: center;
+            }
+            #pagedescription ul {
+                padding-left: 100px;
+                list-style: square;
             }
         </style>
     </head>
     <body>
         <header id="header"></header>
         <div id="pagedescription">
-            <span><h1 id="title">My Projects</h1></span>
+            <span id="titlespan">My Projects</span>
             <p>Here are a couple of the projects I've completed since I began learning CS! Below is a carousel linking to the projects I've completed (those page are all under
                 construction, sorry!), but here's a quick list of them:</p>
                 <ul>
-                    <li>Quantitative Trading Algorithms</li>
-                    <li>My Personal Website</li>
-                    <li>Receipt Reader</li>
-                    <li>Grade Calculator</li>
-                    <li>UI/UX Development</li>
+                    <li><b>Quantitative Trading Algorithms:</b> A project on my journey through learning about quantitative algorithms and using them in Quantopian (and transitioning to other platforms)</li>
+                    <li><b>My Personal Website:</b> How I came about this website, why I made it like this, what I learned from it, and where I plan to go with it</li>
+                    <li><b>Receipt Reader:</b> One of the first projects I did an college, a blend of computer vision and Google API to form a great introduction to CS in general</li>
+                    <li><b>Grade Calculator:</b> A small side project I made just to serve as an initial introduction to using HTML/CSS as well as a convenient way to calculate grades since Berkeley doesn't have one</li>
+                    <li><b>UI/UX Development:</b> The latest project, this was one I developed and used for general members in Codeology</li>
                 </ul>
             <!-- <p>However, there are even more that you can look forward to in the future! Here's another list that holds a brief description of their outlines:</p>
                 <ul>
