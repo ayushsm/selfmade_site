@@ -153,7 +153,7 @@
         </style>
     </head>
     <body>
-        <header id="header"></header>
+        <<header id="header"></header>>
         <div class="swiper-container" >
             <button onclick="showButtons()" id="stop-button">Control the Wheel</button>
             <button onclick="hideButtons()" id="start-button">Restart Autoplay</button>
@@ -215,7 +215,7 @@
                 initialSlide: 2,
                 slidesPerView: 'auto',
                 freeMode: true,
-                mousewheel: true,
+                // mousewheel: true,
                 centeredSlides: true,
                 // slidesPerColumn: 2,
                 // slidesPerColumnFill: 'row',
@@ -258,16 +258,9 @@
             }
         </script>
         <script>
-            const invocation = new XMLHttpRequest();
-            const url = 'navigation.html';
-            if (invocation) {    
-                invocation.open('GET', url, true);
-                invocation.onreadystatechange = handler;
-                invocation.send(); 
-            }
-            // $(document).ready(function() {
-            //     $("#header").load("navigation.html");
-            // });
+            $(document).ready(function() {
+                $("#header").load("navigation.html");
+            });
         </script>
     </body>
 </html>

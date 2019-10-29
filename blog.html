@@ -95,8 +95,13 @@
                 background-size: cover;
             }
             #page3 {
+                image-resolution: 100dpi;
                 background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(images/timeline/2019.jpg);
                 background-position: 50% 42%;
+                background-size: cover;
+            }
+            #page4 {
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(images/timeline/2020.jpg);
                 background-size: cover;
             }
             .swiper-pagination-bullet {
@@ -278,6 +283,12 @@
                         <p id="timeline-text">The circle of life slowly repeats itself</p> 
                     </div>
                 </div>
+                <div class="swiper-slide" id="page4" year="2020">
+                    <div class="swiper-slide-content" onclick="location.href='construction.html'">
+                        <span id="timeline-year">2020</span>
+                        <h4 id="timeline-title">The Final Lap</h4>
+                    </div>
+                </div>
             </div>
 
             <div class="swiper-pagination"></div>
@@ -297,14 +308,15 @@
                     return '<span style="border: 10px solid; class=' + className + '">' + year + '</span>';
                 },
                 mousewheel: true,
+                speed: 1000,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
-                preventClicks: false
+                preventClicks: false,
+                lazy: true
             });
         </script>
-
         <script>
             $(document).ready(function() {
                 $("#header").load("navigation.html");
