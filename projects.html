@@ -45,16 +45,18 @@
                 text-align: center;
             }
             .swiper-slide {
-                top: 25%;
+                /* border: blue solid 1px; */
+                /* top: 10%; */
                 text-align: center;
                 font-size: 18px;
                 background: #fff;
                 text-align: center;
-                height: 50%;
+                /* height: 50%; */
                 background: transparent;
                 border-radius: 5%;
                 width: 28%;
-                /* opacity: 0.5; */
+                z-index: 1;
+                position: relative;
                 /* Center slide text vertically */
                 display: -webkit-box;
                 display: -ms-flexbox;
@@ -133,7 +135,7 @@
                 border-width: thin;
                 border-radius: 20px;
                 position: absolute;
-                bottom: 12%;
+                bottom: 6%;
                 text-transform: uppercase;
                 font-family: 'Raleway', sans-serif;
                 font-size: 24px;
@@ -150,15 +152,43 @@
                 transform: translate(24%, 0);
                 background-image: linear-gradient(to left, #f2709c, #ff9472);
             }
+            #title {
+                text-align: center;
+                padding: 0px;
+                margin: 0px;
+                font-family: Noto Sans, sans-serif;
+                font-size: 70px;
+            }
+            #pagedescription {
+                /* border: red solid 1px; */
+                padding: 0;
+                margin: 0;
+            }
         </style>
     </head>
     <body>
         <header id="header"></header>
+        <div id="pagedescription">
+            <span><h1 id="title">My Projects</h1></span>
+            <p>Here are a couple of the projects I've completed since I began learning CS! Below is a carousel linking to the projects I've completed (those page are all under
+                construction, sorry!), but here's a quick list of them:</p>
+                <ul>
+                    <li>Quantitative Trading Algorithms</li>
+                    <li>My Personal Website</li>
+                    <li>Receipt Reader</li>
+                    <li>Grade Calculator</li>
+                    <li>UI/UX Development</li>
+                </ul>
+            <!-- <p>However, there are even more that you can look forward to in the future! Here's another list that holds a brief description of their outlines:</p>
+                <ul>
+                    <li>heh</li>
+                </ul> -->
+        </div>
         <div class="swiper-container" >
             <button onclick="showButtons()" id="stop-button">Control the Wheel</button>
             <button onclick="hideButtons()" id="start-button">Restart Autoplay</button>
             <div class="swiper-wrapper">
-                <div class="swiper-slide" id="1" onclick="window.location.href='blog.html'">
+                <div class="swiper-slide" id="1" onclick="window.location.href='construction.html'">
                     <div class="swiper-slide-content">
                         <div class="image">
                             <img src="images/projects/math.jpeg" class="project-image">
@@ -167,7 +197,7 @@
                         <p>You feelin' lucky?</p>
                     </div>
                 </div>
-                <div class="swiper-slide" id="2" onclick="window.location.href='blog.html'">
+                <div class="swiper-slide" id="2" onclick="window.location.href='construction.html'">
                     <div class="swiper-slide-content">
                         <div class="image">
                             <img src="images/projects/stocks.jpg" class="project-image">
@@ -176,7 +206,7 @@
                         <p>Wall Street 2.0</p>
                     </div>
                 </div>
-                <div class="swiper-slide" id="3" onclick="window.location.href='blog.html'">
+                <div class="swiper-slide" id="3" onclick="window.location.href='construction.html'">
                     <div class="swiper-slide-content">
                         <div class="image">
                             <img src="images/receipt2.jpg" class="project-image">
@@ -185,7 +215,7 @@
                         <p>The digital age is here</p>
                     </div>   
                 </div>
-                <div class="swiper-slide" id="4" onclick="window.location.href='blog.html'">
+                <div class="swiper-slide" id="4" onclick="window.location.href='construction.html'">
                     <div class="swiper-slide-content">
                         <div class="image">
                             <img src="images/projects/favicon.png" class="project-image">
@@ -194,7 +224,7 @@
                         <p>Too many hours were put into this</p>
                     </div>   
                 </div>
-                <div class="swiper-slide" id="5" onclick="window.location.href='blog.html'">
+                <div class="swiper-slide" id="5" onclick="window.location.href='construction.html'">
                     <div class="swiper-slide-content">
                         <div class="image">
                             <img src="images/projects/uiux.png" class="project-image" id="pic5">
@@ -219,7 +249,7 @@
                 centeredSlides: true,
                 // slidesPerColumn: 2,
                 // slidesPerColumnFill: 'row',
-                speed: 4000,
+                speed: 6000,
                 pagination: {
                     type: 'none',
                     el: '.swiper-pagination',
@@ -239,9 +269,7 @@
             function showButtons() {
                 document.getElementById("next-button").style.display = "inline";
                 document.getElementById("prev-button").style.display = "inline";
-                console.log(this.swiper.autoplay);
                 this.swiper.autoplay.stop();
-                console.log(this.swiper.autoplay);
                 this.swiper.params.freeMode = false;
                 this.swiper.params.centeredSlides = true;
                 this.swiper.params.speed = 1000;
@@ -251,8 +279,8 @@
             function hideButtons() {
                 this.swiper.autoplay.start();
                 this.swiper.params.freeMode = true;
-                this.swiper.params.centeredSlides = false;
-                this.swiper.params.speed = 4000;
+                // this.swiper.params.centeredSlides = false;
+                this.swiper.params.speed = 6000;
                 document.getElementById("next-button").style.display = "none";
                 document.getElementById("prev-button").style.display = "none";
             }
