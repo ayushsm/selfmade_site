@@ -1,0 +1,237 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+}
+.swiper-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    flex-grow: 1;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    box-shadow: 0 5px 25px 5px rgba(black, .2);
+}
+.swiper-wrapper {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.swiper-slide {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+.swiper-slide::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    right: -115%;
+    bottom: -10%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 100%;
+    box-shadow: 0 5px 25px 5px rgba(black, .2);
+}
+.swiper-slide-content {
+    position: absolute;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    right: 50%;
+    top: 13%;
+    transform: translate(50%, 0);
+    font-size: 12px;
+    z-index: 2;
+}
+#page1 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(images/timeline/2017.jpg);
+    background-size: cover;
+}
+#page2 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(images/timeline/2018.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#page3 {
+    image-resolution: 100dpi;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(images/timeline/2019.jpg);
+    background-position: 50% 30%;
+    background-size: cover;
+}
+/* #page4 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(images/timeline/2020.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), linear-gradient(to bottom, #232526, #414345);
+    background-size: cover;
+} */
+.swiper-pagination-bullet {
+    width: auto;
+    height: auto;
+    text-align: center;
+    opacity: 1;
+    background: transparent;
+    color: #FFCB9A;
+    margin: 15px 0 !important;
+    position: relative;
+}
+.swiper-pagination-bullet::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -32.5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: #FFCB9A;
+    transform: scale(0);
+    transition: 0.2s;
+}
+
+.swiper-slide #timeline-year {
+    font-style: italic;
+    font-size: 42px;
+    margin-bottom: 50px;
+    font-weight: 500;
+    transition: 0.2s ease 0.4s;
+}
+.swiper-slide #timeline-title {
+    font-weight: 800;
+    font-size: 34px;
+    margin: 0 0 30px;
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+    transition: 0.2s ease 0.5s;
+}
+.swiper-slide #timeline-text {
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: 14px;
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+    transition: 0.2s ease 0.6s;
+}
+.swiper-slide-active #timeline-year {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: 0.4s ease 1.0s;
+}
+.swiper-slide-active #timeline-title {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: 0.4s ease 1.1s;
+}
+.swiper-slide-active #timeline-text {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: 0.4s ease 1.2s;
+}
+/* header {
+    z-index: 3;
+    position: absolute;
+} */
+@media screen and (min-width: 786px) {
+    .swiper-slide::after {
+        right: -30%;
+        bottom: -8%;
+        width: 240px;
+        height: 50%;
+    }
+    .swiper-slide-content {
+        right: 30%;
+        top: 80%;
+        transform: translateY(-50%);
+        width: 400px;
+        font-size: 11px;
+        text-align: right;
+    }
+    .swiper-slide-content:hover {
+        cursor: pointer;
+    }
+    .swiper-slide-content:hover #timeline-title {
+        text-decoration: underline;
+    }
+    .swiper-slide #timeline-year {
+        margin-bottom: 0;
+        font-size: 32px;
+        transform: translate3d(20px, 0, 0);
+        color: #D9B08C;
+        transition: 0.2s ease 0.4s;
+    }
+    .swiper-slide #timeline-title {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 40px;
+    }
+    .swiper-pagination {
+        right: 15% !important;
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 18px;
+        z-index: 1;
+    }
+    .swiper-pagination::before {
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background-color: rgba(255, 255, 255, .2);
+    }
+    .swiper-button-prev {
+        top: 25%;
+        left: auto;
+        right: 15%;
+        transform: rotate(90deg) translate(0, 10px);
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23FFCB9A'%2F%3E%3C%2Fsvg%3E") !important;
+    }
+    .swiper-button-prev:hover {
+        transform: rotate(90deg) translate(-3px, 10px);
+    }
+    .swiper-button-next {
+        top: auto;
+        bottom: 15%;
+        right: 15%;
+        transform: rotate(90deg) translate(0, 10px);
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23FFCB9A'%2F%3E%3C%2Fsvg%3E") !important;
+    }
+    .swiper-button-next:hover {
+        transform: rotate(90deg) translate(3px, 10px);
+    }
+}
+@media screen and (min-width: 1024px) {
+    .swiper-slide::after {
+        right: -20%;
+        bottom: -12%;
+        width: 240px;
+        height: 50%;
+        box-shadow: 0 5px 25px 5px rgba(black, .2);
+    }
+    .swiper-slide-content {
+        right: 25%;
+    }
+}    

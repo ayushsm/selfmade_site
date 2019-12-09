@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- General stuff -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+        <!-- Load in pre-built CSS for the page -->
+        <link rel="stylesheet" href="assets/css/navigation.css">
+
+        <!-- Get Google fonts used on the page -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:thin" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:thin" rel="stylesheet">
-        <link rel="stylesheet" href="swiper/dist/css/swiper.min.css">
-        <link rel="stylesheet" href="navigation.css">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <!-- Swiper API styling and packages -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+        <link rel="stylesheet" href="swiper/dist/css/swiper.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
         <script src="swiper/dist/js/swiper.min.js"></script>
 
+        <!-- Load in general APIs and other useful libraries -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <!-- Currently figuring out how to move this style section to the CSS assets section since it breaks on move. Might be due to CSS loading prior to JS loading -->
         <style>
             html, body {
                 position: relative;
@@ -97,14 +106,14 @@
             #page3 {
                 image-resolution: 100dpi;
                 background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(images/timeline/2019.jpg);
-                background-position: 50% 42%;
+                background-position: 50% 30%;
                 background-size: cover;
             }
-            #page4 {
-                /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(images/timeline/2020.jpg); */
+            /* #page4 {
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(images/timeline/2020.jpg);
                 background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), linear-gradient(to bottom, #232526, #414345);
                 background-size: cover;
-            }
+            } */
             .swiper-pagination-bullet {
                 width: auto;
                 height: auto;
@@ -166,10 +175,10 @@
                 transform: translate3d(0, 0, 0);
                 transition: 0.4s ease 1.2s;
             }
-            header {
+            /* header {
                 z-index: 3;
                 position: absolute;
-            }
+            } */
             @media screen and (min-width: 786px) {
                 .swiper-slide::after {
                     right: -30%;
@@ -260,9 +269,26 @@
     </head>
 
     <body>
-        <header id="header"></header>
+        <!-- Common header. Working on pulling it out to a remote HTML file so that it can be standardized and only one file needs to be updated. Currently having issues with CSS loading with it, will need to look into how that can be achieved -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html"><img src="images/projects/favicon.png" class="logo" width="46" height="64"></a>
+                <nav>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog/Timeline</a></li>
+                        <li><a href="TechResume.pdf">Resume</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Swiper container for all swiper slides -->
         <div class="swiper-container">
+            <!-- Extra div class for swiper API-->
             <div class="swiper-wrapper">
+                <!-- Individual slides with unique ID/year. Each links to a blog page (currently under construction) -->
                 <div class="swiper-slide" id="page1" year="2017">
                     <div class="swiper-slide-content" onclick="location.href='construction.html'">
                         <span id="timeline-year">2017</span>
@@ -292,11 +318,13 @@
                 </div>
             </div>
 
+            <!-- Added parts to break slides into individual pages and how to rotate through them -->
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
 
+        <!-- Swiper setup to go through it as we'd like. Can be modified to change how the interactions with the slides work -->
         <script>
             var swiper = new Swiper('.swiper-container', {
                 direction: 'vertical',
@@ -308,19 +336,15 @@
                     var year = document.querySelectorAll('.swiper-slide')[index].getAttribute('year');
                     return '<span style="border: 10px solid; class=' + className + '">' + year + '</span>';
                 },
-                mousewheel: false,
-                speed: 1000,
+                initialSlide: 2,
+                mousewheel: true,
+                speed: 2000,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
                 preventClicks: false,
                 lazy: true
-            });
-        </script>
-        <script>
-            $(document).ready(function() {
-                $("#header").load("navigation.html");
             });
         </script>
     </body>

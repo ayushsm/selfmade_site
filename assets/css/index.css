@@ -1,0 +1,150 @@
+/* Styling for entirety of the page */
+body, html {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.page-container {
+    display: contents;
+}
+#favicon-img {
+    /* mix-blend-mode: multiply; */
+    max-height: 100%;
+    margin: auto;
+    display: block;
+    transform: translateX(-14.5%);
+}
+#home-img {
+    max-width: 100%;
+}
+#favicon-page {
+    margin: 10px 0 0 50px;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border: black 5px double;
+    position: absolute;
+    overflow: hidden;
+    z-index: 3;
+    mix-blend-mode: multiply;
+}
+#favicon-page:hover {
+    cursor: pointer;
+}
+#favicon-img:hover {
+    cursor: pointer;
+}
+#fullpage {
+    height: 100%;
+    position: relative;
+}
+#home {
+    height: 100%;
+    position: relative;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8)), url(../../images/slideshow/6.jpg);
+    background-size: cover;
+}
+/* Have headshot cover only half of background */
+#intro {
+    display: flex;
+    height: 100%;
+    position: relative;
+    background-image: url(../../images/headshot2.jpg);
+    background-size: 50%;
+    background-position: 100% 30%;
+    background-repeat: no-repeat;
+}
+
+/* Set up scroll down and scroll up to be at bottom and top of pages, bounc on hover */
+#scroll-down {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    z-index: 2;
+    scroll-behavior: smooth;
+}
+#scroll-img-down {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: -20px;
+    display: block;
+    max-width: 160px;
+    opacity: 0.6;
+}
+#scroll-img-down:hover {
+    animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    -moz-animation: bounce 2s infinite;
+    -o-animation: bounce 2s infinite;
+}
+#scroll-up {
+    position: fixed;
+    display: none;
+    top: 0%;
+    width: 100%;
+    z-index: 2;
+    scroll-behavior: smooth;
+}
+#scroll-img-up {
+    transform: rotate(180deg);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -20px;
+    display: block;
+    max-width: 160px;
+    opacity: 0.6;
+    filter: invert(100%)
+}
+#scroll-img-up:hover {
+    animation: reverse-bounce 2s infinite;
+    -webkit-animation: reverse-bounce 2s infinite;
+    -moz-animation: reverse-bounce 2s infinite;
+    -o-animation: reverse-bounce 2s infinite;
+}
+#intro-body {
+    max-width: 50%;
+    padding: 50px 25px;
+}
+
+/* Set up font customizations */
+#intro-body > h1 {
+    font-family: 'Bebas Neue';
+    text-align: center;
+    font-size: 50px;
+}
+#intro-body > p, #intro-body > ul {
+    font-family: 'Quicksand', sans-serif;
+    font-size: large;
+}
+
+/* Customize visualization of the important links sections */
+.important-links > span {
+    font-family: 'Quicksand', sans-serif;
+    font-size: small;
+}
+.important-links {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.important-links > span {
+    display: table-cell;
+    text-align: center;
+    /* Smoothen zoom */
+    transition: transform .5s ease;
+}
+#work-positions > span > a > img {
+    height: 50px;
+}
+#media-connections > span > a > img {
+    height: 70px;
+}
+#work-titles {
+    padding-top: 10px;
+}
+
+/* Zoom on hover for any of the icons */
+#work-positions > span:hover,  #media-connections > span:hover {
+    transform: scale(1.1);
+}

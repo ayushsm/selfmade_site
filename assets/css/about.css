@@ -1,0 +1,98 @@
+/* Body Customization */
+html {
+    overflow: hidden;
+    height: 100%;
+}
+html::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+body {
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+    background-image: linear-gradient(to bottom, #B993D6, #8CA6DB);
+}
+p {
+    color: black;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+/* Title Customization */
+div > h1 {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+div > h2 {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    /* -webkit-text-stroke-width: 1px; */
+    /* -webkit-text-stroke-color: #787878; */
+}
+div > h3 {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Customization for club blurbs */
+/* Box + box-shadow setup for each club's description */
+.club-paragraph {
+    padding: 25px;
+    box-shadow: 5px 10px black;
+    border: black 1px double;
+    display: table;
+    vertical-align: middle;
+    background-color: white;
+}
+/* Table setup for clear divide between text and image */
+.club-blurb {
+    display: table-cell;
+    vertical-align: middle;
+}
+/* Have club image box to adjust each image's position and look */
+.club-img {
+    mix-blend-mode: multiply ;
+    display: table-cell;
+    margin-left: 60px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+/* Individual adjustments for images since still figuring out positioning */
+#codeology {
+    margin-right: -15px;
+    margin-top: 15px;
+}
+#speechanddebate {
+    margin-top: 27px;
+}
+#robotics {
+    margin-top: 20px;
+}
+
+/* Slideshow styling */
+/* Create container with style */
+.slideshow-container {
+    margin: 80px auto;
+    position: relative;
+    width: 800px;
+    height: 509px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+/* Positioning for slide and image in each slide */
+.slide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.slide img {
+    height: 100%;
+    width: 100%;
+}
+

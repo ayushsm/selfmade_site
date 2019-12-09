@@ -31,7 +31,7 @@
     font-size: 120%;
 }
 .nav-container {
-    width: 94%;
+    width: 95%;
     margin: 0 auto;
     padding: 0;
 }
@@ -39,6 +39,7 @@ header {
     width: 100%;
     background: #272727;
     height: auto;
+    border-bottom: black 1px;
 }
 header::after {
     content: '';

@@ -1,126 +1,141 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- General stuff -->
         <title>Personal Website</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- Get AOS package to get fade effects on page -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+        <!-- Load in pre-built CSS for the page -->
+        <link rel="stylesheet" type="text/css" href="assets/css/index-navbar.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/bounce-animation.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/reverse-bounce-animation.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
+
+        <!-- Get Google fonts used on the page -->
+        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Open+Sans|Quicksand|Sulphur+Point&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:thin" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:thin" rel="stylesheet">
         
+        <!-- Load in general APIs and other useful libraries -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-        <style>
-            body, html {
-                margin: 0;
-                background-color: #116466;
-                overflow: hidden;
-            }
-            p {
-                font-weight: 100;
-                text-align: left;
-            }
-
-            /* Nav Bar */
-            #profile {
-                border-radius: 10%;
-                width: 30%;
-                height: 30%;
-            }
-            .nav-container {
-                width: 94%;
-                margin: 0 auto;
-                padding: 0;
-            }
-            header {
-                width: 100%;
-                background: #272727;
-                height: auto;
-            }
-            header::after {
-                content: '';
-                display: table;
-                clear: both;
-            }
-            .body-container {
-                margin-right: 9%;
-                margin-left: 9%;
-                text-align: center;
-                font-family: Avant Garde, Avantgarde, Century Gothic, Apple Gothic, sans-serif;
-                color: #D1E8E2;
-            }
-            .logo {
-                float: left;
-                border-radius: 50%;
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-            nav {
-                float: right;
-                color: #5680E9;
-                font-family: 'Raleway', sans-serif;
-            }
-            nav ul {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-            }
-            nav li {
-                display: inline-block;
-                position: relative;
-                margin-left: 50px;
-                padding-top: 18px;
-            }
-            nav a {
-                text-transform: uppercase;
-                font-size: 20px;
-                text-decoration: none;
-            }
-            nav a:hover {
-                color: #D9B08C;
-                text-decoration: none;
-                font-weight: bold;
-            }
-            nav a::before {
-                content: '';
-                display: block;
-                height: 5px;
-                background-color: #FFCB9A;
-
-                position: absolute;
-                top: 0;
-                width: 0%;
-                
-                transition: all ease-in-out 500ms;
-            }
-            nav a:hover::before {
-                width: 100%;
-            }
-            a:visited {
-                color: #FFCB9A;
-            }
-        </style>
     </head>
-    <body>
-        <header id="header">
+    <body> 
+        <!-- Common header. Working on pulling it out to a remote HTML file so that it can be standardized and only one file needs to be updated. Currently having issues with CSS loading with it, will need to look into how that can be achieved. Has a different CSS styling compared to every other page -->
+        <header>
             <div class="nav-container">
-                <img src="images/projects/favicon.png" class="logo" width="46" height="64" href="index.html">
                 <nav>
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="projects.html">Projects</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog.html">Blog/Timeline</a></li>
                         <li><a href="TechResume.pdf">Resume</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
-        <div>
-            <h1>Welcome to my page</h1>
+        <!-- Have a full page container to hold all the information we have in the entire page -->
+        <div id="fullpage">
+            <!-- Icon container, returns to main page -->
+            <div id="favicon-page" onclick="homePage()">
+                <img id="favicon-img" src="images/projects/favicon.png">
+            </div>
+
+            <!-- Simple, clean home page with only background image. Also holds scroll image to be clicked so you can access intro page. Has AOS package for smooth scroll + fade in on load -->
+            <div class="page-container" id="home-container">
+                <div id="home" data-aos="fade-in" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true" data-aos-offset="180"></div>
+                <div id="scroll-down"><img id="scroll-img-down" src="images/assets/scroll-down.png"></div>
+            </div>
+
+            <!-- Intro page that contains headshot image -->
+            <div class="page-container" id="intro-container">
+                <!-- Use same image but rotated so it's a scroll up -->
+                <div id="scroll-up"><img id="scroll-img-up" src="images/assets/scroll-down.png"></div>
+                
+                <!-- Intro page split into headshot (background image, look in css file) and intro sections -->
+                <div id="intro">
+                    <div id="intro-body">
+                        <h1>Greetings!</h1>
+                        <p>Nice to meet you, I'm Ayush! I'm currently a fourth year at UC Berkeley, where I'm taking
+                            classes and participating in clubs on campus. You can learn more about me at my <a href="about.html">About</a> 
+                            page.</p>
+                        <p>Previous work positions I've held include the following:</p>
+                        <br>
+                        <!-- Have an entire work container to hold all information in the same position. Use same template for links to click on, trying to figure out how to create table for all work-* ID sections -->
+                        <div id="work-container">
+                            <div class="important-links" id="work-positions">
+                                <span><a href="https://cs61c.org/"><img id="cs61c" src="images/assets/61c.png"></a></span>
+                                <span><a href="https://www.plantsciences.ucdavis.edu/"><img id="ucdavis" src="images/assets/davis.png"></a></span>
+                                <span><a href="http://med.stanford.edu/"><img id="stanford-med" src="images/assets/stanford-med.png"></a></span>
+                            </div>
+                            <div class="important-links" id="work-titles">
+                                <span>Head TA of Machine Architecture</span>
+                                <span>Research Assistant</span>
+                                <span>Research Assistant</span>
+                            </div>
+                            <div class="important-links" id="work-locations">
+                                <span>EECS Dept. @ UC Berkeley</span>
+                                <span>Dept. of Pomology @ UC Davis</span>
+                                <span>Stanford School of Medicine</span>
+                            </div>
+                        </div>
+                        <br>
+                        <p>Some fun facts:</p>
+                        <ul>
+                            <li>Black belt in Taekwondo</li>
+                            <li>Played the French Horn</li>
+                            <li>Been skydiving</li>
+                            <li>Fastest I've spoken: 512 wpm</li>
+                        </ul>
+                        <br>
+                        <p>If you ever want to reach out or check out some of my stuff, check out these links to get in touch:</p>
+                        <br>
+                        <div class="important-links" id="media-connections">
+                            <span><a href="https://www.facebook.com/ayush.maganahalli"><img id="facebook" src="images/assets/facebook_circle.png"></a></span>
+                            <span><a href="https://www.instagram.com/ayush.sm/"><img id="instagram" src="images/assets/instagram.png"></a></span>
+                            <span><a href="mailto:ayush.sm@berkeley.edu"><img id="email" src="images/assets/gmail_circle.png"></a></span>
+                            <span><a href="https://www.linkedin.com/in/ayush-maganahalli/"><img id="linkedin" src="images/assets/linkedin_circle.png"></a></span>
+                            <span><a href="https://github.com/ayushsm"><img id="github" src="images/assets/github.png"></a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
     </body>
+
+    <!-- Load in AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Start AOS -->
+    <script>AOS.init();</script>
+
+    <!-- Have icon return to home -->
+    <script>
+        function homePage() {
+            window.location = 'index.html';
+        }
+    </script>
+
+    <!-- Have scroll down button move to bottom page and scroll up button to original page on click -->
+    <script>
+        $(document).ready(function(){
+            $("#scroll-img-down").on('click', function(event) {
+                $('html,body').animate({scrollTop: $("#intro").offset().top}, 2000);
+                $("#scroll-down").fadeOut();
+                $("#scroll-up").delay(1800).fadeIn();
+            });
+            $("#scroll-img-up").on('click', function(event) {
+                $('html,body').animate({scrollTop: $("#home").offset().top}, 3500);
+                $("#scroll-up").fadeOut();
+                $("#scroll-down").delay(1800).fadeIn();
+            });
+        });
+    </script>
 </html>

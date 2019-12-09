@@ -1,84 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- General Stuff -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+        <!-- Get AOS package to get fade effects on page -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+        <!-- Load in pre-built CSS for the page -->
+        <link rel="stylesheet" type="text/css" href="assets/css/navigation.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/about.css"/>
+
+        <!-- Get Google fonts used on the page -->        
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:thin" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:thin" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Dosis:200&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="swiper/dist/css/swiper.min.css">
-        <link rel="stylesheet" href="navigation.css">
 
+        <!-- Swiper API styling and packages -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+        <link rel="stylesheet" href="swiper/dist/css/swiper.min.css">
+
+        <!-- Load in general APIs and other useful libraries -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
-
-
-        <style>
-            /* Body Customization */
-            html {
-                overflow: hidden;
-                height: 100%;
-            }
-            html::-webkit-scrollbar {
-                width: 0px;
-                background: transparent;
-            }
-            body {
-                height: 100%;
-                overflow: auto;
-                margin: 0;
-                background-image: linear-gradient(to bottom, #B993D6, #8CA6DB);
-            }
-            p {
-                color: black;
-                text-align: left;
-                font-family: 'Roboto', sans-serif;
-                font-size: 16px;
-            }
-
-            /* Title Customization */
-            h1 {
-                color: black;
-                font-family: 'Open Sans', sans-serif;
-                text-transform: uppercase;
-            }
-            h2 {
-                color: black;
-                font-family: 'Open Sans', sans-serif;
-                text-transform: uppercase;
-                /* -webkit-text-stroke-width: 1px; */
-                /* -webkit-text-stroke-color: #787878; */
-            }
-
-            /* Slideshow */
-            .slideshow-container {
-                margin: 80px auto;
-                position: relative;
-                width: 880px;
-                height: 560px;
-                margin-top: 20px;
-                margin-bottom: 20px;
-                border: 2px solid black;
-            }
-            .slide {
-                position: absolute;
-                height: 100%;
-                width: 100%;
-            }
-            .slide img {
-                height: 100%;
-                width: 100%;
-            }
-        </style>
     </head>
+
     <body>
-        <header id="header"></header>
+        <!-- Common header. Working on pulling it out to a remote HTML file so that it can be standardized and only one file needs to be updated. Currently having issues with CSS loading with it, will need to look into how that can be achieved -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html"><img src="images/projects/favicon.png" class="logo" width="46" height="64"></a>
+                <nav>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog/Timeline</a></li>
+                        <li><a href="TechResume.pdf">Resume</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Slideshow set up. Have an overarching container and then individual div per slide. Manipulated via JS below -->
         <div class="slideshow-container">
             <div class="slide">
                 <img src="images/slideshow/1.jpg">
@@ -98,27 +67,55 @@
             <div class="slide">
                 <img src="images/slideshow/6.jpg">
             </div>
+            <div class="slide">
+                <img src="images/slideshow/7.png">
+            </div>
         </div>
+
+        <!-- Separate container for all other information below -->
         <div class="body-container">
             <h1>About Me</h1>
             <p>Hi there! If you haven't met me before, my name is Ayush Maganahalli and I'm currently studying at UC Berkeley, where I'm double majoring in Electrical
-                Engineering/Computer Science and Applied Mathematics. This past summer, I taught Berkeley's Machine Architecture class as the Head Teaching Assistant.</p>
+                Engineering and Computer Science (EECS) and Applied Mathematics. This past summer, I taught Berkeley's Machine Architecture class as the Head Teaching Assistant.</p>
             <h2>Background</h2>
-            <p> I was born and raised in San Ramon, California and came to Berkeley after I graduated from Dougherty Valley High, so you can really 
-                see that I expanded my horizons by going to college 30 minutes away. When I came to Berekley, I had planned to become a bioengineer 
-                but over the course of taking a couple CS classes and <i>one</i> Organic Chem course, I realized that my path lay in the direction of CS (or 
-                basically any field that didn't involve OChem).
+            <p>I was born and raised in San Ramon, California and came to Berkeley after I graduated from Dougherty Valley High, so you can really see that I expanded my horizons by going to college 30 minutes away. When I came to Berekley, I had planned to become a bioengineer but over the course of taking a couple CS classes and <i>one</i> Organic Chem course, I realized that my path lay in the direction of CS (or basically any field that didn't involve OChem).
             </p>
             <h2>Hobbies and Activities</h2>
-            <p>In high school, I was heavily involved in Speech and Debate, where I competed in Varsity Lincoln-Douglass on the national circuit as well as
-                robotics, where I competed in the FTC (FIRST Tech Challenge) Division. Once I came to college, I ended up joining <a href="https://badminton.berkeley.edu/">
-                Cal Badminton</a> my freshman year. Later, I would end up joining <a href="https://www.codeology.club/">Codeology</a> and <a href="https://ethicalapparel.org/">
-                EthiCAL</a>. Whenver I'm not studying (which isn't as often as I'd like) or participating in one of these clubs, I'm often playing chess, soccer, 
-                or some video games. I also love to travel (fun fact: I've been to 4 continents and 14 countries, with plans to go to more) and read when I can, 
-                but growing up sure does keep you busy (and tired???).
-            </p>
+            <h3>College</h3>
+            <div class="club-paragraph">
+                <p class="club-blurb">Since I came to college, I've been part of <a href="https://badminton.berkeley.edu/">Cal Badminton</a>. I chose to join purely out of curiousity, having seen the sport played competitively for the first time in my life while watching the Rio Olympics. CalBad has been a huge part of my experience at Berkeley, being the first club I joined on campus and always providing a place for community. I eventually became president of the club, continuing to grow and enrich the community that had given so much to me. I'm hoping that, somewhere down the line, I'll be able to contribute to the badminton community at large in the US and abroad.</p>
+                <img class="club-img" id="calbadminton" height="120" width="120" src="images/assets/badminton.png">
+            </div>
+            <br>
+            <div class="club-paragraph" id="cs">
+                <p class="club-blurb">Outside of badminton, I'm part of some CS clubs on campus, one of which is <a href="https://www.berkeleyanova.org/">Anova</a>. ANova focuses on providing CS education and access to under-resourced communities around the Bay Area, hoping to deconstruct issues like income or gender inequality present in the tech industry. This past semester I was stationed at Downtown Charter Academy, a middle school in Oakland. My team and I introduced them to Snap and Python, teaching basic concepts like if/else statements and for loops.</p>
+                <img class="club-img" id="anova" height="120" width="120" src="images/assets/anova2.png">
+            </div>
+            <br>
+            <div class="club-paragraph" id="cs">
+                <p class="club-blurb">Similarly, I'm also part of another CS club on campus, <a href="https://www.codeology.club/">Codeology</a>, which aims to provide a CS community for many people who are new to CS or are unfamiliar with aspects of the CS community like internship preparation. I've served as a Project Leader for a design-based project and the Director of Education, which is primarily focused on teaching newer members about how to succeed at SWE interviews.</p>
+                <img class="club-img" id="codeology" height="60" width="200" src="images/assets/codeology.png">
+            </div>
+            <br>
+            <div class="club-paragraph">
+                <p class="club-blurb">Interestingly, I'm also part of <a href="https://ethicalapparel.org/">EthiCAL</a>, a clothing club on campus, which, given my lack of fashion, I didn't think I would've been part of prior to joining. EthiCAL uses the apparel it makes as a fundraiser to provide resources around the Bay and the world for various causes. This semester, the club decided to focus on water conversation and human labor rights, while also doing what we can to help provide a foundation for local entrepreneurs who could use the funding. Organizations we've partnered up with include Save the Bay, Society of Women Engineers @ Berkeley, and many others. We've donated thousands of dollars to people and organizations around the world, and hope to continue to do so for many years to come!</p>
+                <img class="club-img" id="ethical"  height="160" width="120" src="images/assets/ethical.png">
+            </div>
+            <h3>High School</h3>
+                <div class="club-paragraph">
+                    <p class="club-blurb">In high school, I was heavily involved in Speech and Debate, where I competed in Varsity Lincoln-Douglass on the national circuit. I started my career in LD, succeeding at the local level in novice and JV levels, and eventually transferred to circuit LD in my junior and senior years. I participated in multiple national tournaments, breaking at a handful, with our team finally mading it to the Tournament of Champions for the first time my senior year. I've also participated in Policy, Parli, and PuFo, and have reached Quarterfinals of the California State Tournament as well as Quarterfinals of the National World Schools Tournament.</p>
+                    <img class="club-img" id="speechanddebate" width ="120" src="images/assets/speechanddebate.png">
+                </div>
+                <br>
+                <div class="club-paragraph">
+                    <p class="club-blurb">Since I was in elementary school, I participated in FIRST robotics tournaments. I started in FLL and transitioned into FTC while in high school. FLL gave me an introduction into many of topics and causes that I'm passionate about today like global warming, healthcare, and others. It served as a launching pad for me becoming an engineer and also learning to love the competitive teamwork aspects of many fields, whether that be sports, tech, or academics.</p>
+                    <img class="club-img" id="robotics" width ="120" src="images/fll.png">
+                </div>
+                <br>
         </div>
+        <br>
 
+        <!-- Create rotating and fading effect for slideshow so there's a new image. Always goes in the same order due t othe datastructure but could easily make randomize if desired -->
         <script>
             $(".slideshow-container > div:gt(0)").hide();
             setInterval(function() {
@@ -126,9 +123,10 @@
             }, 4000);
         </script>
 
+        <!-- Delay body load for fade in effect. Could be replaced by AOS package depending on time permitting -->
         <script>
             $(document).ready(function() {
-                $("#header").load("navigation.html");
+                $("body").hide(0).delay(500).fadeIn(1000)
             });
         </script>
     </body>

@@ -10,191 +10,53 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:thin" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:thin" rel="stylesheet">
         <link rel="stylesheet" href="swiper/dist/css/swiper.min.css">
-        <link rel="stylesheet" href="navigation.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/navigation.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/projects.css">
+
+        <!-- Get Google fonts used on the page -->
+        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Open+Sans|Quicksand|Sulphur+Point&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:thin" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:thin" rel="stylesheet">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
-
-        <style>
-            html {
-                overflow: hidden;
-            }
-            html, body {
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
-            body {
-                font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-                font-size: 14px;
-                color: #000;
-                overflow: auto;
-                background-image: linear-gradient(to bottom, #B993D6, #8CA6DB);
-            }
-            .swiper-wrapper {
-                -webkit-transition-timing-function: linear !important; 
-                -o-transition-timing-function: linear !important; 
-                transition-timing-function: linear !important; 
-            }
-            .swiper-container {
-                width: 100%;
-                flex: 1;
-                background: transparent;
-                text-align: center;
-            }
-            .swiper-slide {
-                /* border: blue solid 1px; */
-                /* top: 10%; */
-                text-align: center;
-                font-size: 18px;
-                background: #fff;
-                text-align: center;
-                /* height: 50%; */
-                background: transparent;
-                border-radius: 5%;
-                width: 28%;
-                z-index: 1;
-                position: relative;
-                /* Center slide text vertically */
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                -webkit-justify-content: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                -webkit-align-items: center;
-                align-items: center;
-            }
-            .swiper-slide-active {
-                opacity: 1;
-            }
-            .swiper-slide-content:hover {
-                cursor: pointer;
-            }
-            .swiper-slide-content:hover{
-                -moz-transform: scale(1.05);
-                -webkit-transform: scale(1.05);
-                -o-transform: scale(1.05);
-                -ms-transform: scale(1.05);
-                -webkit-transform: scale(1.05);
-                transform: scale(1.05);
-            }
-            .swiper-slide-content {
-                text-align: center;
-                -webkit-transition: transform 0.5s ease-in-out;
-                -moz-transition: transform 0.5s ease-in-out;
-                transition: transform 0.5s ease-in-out;
-            }
-            .swiper-slide-content h1 {
-                font-family: Noto Sans, sans-serif;
-            }
-            .swiper-slide-content p {
-                font-family: Optima, sans-serif;
-            }
-            #next-button, #prev-button {
-                zoom: 0.8;
-                display: none;
-            }
-            .swiper-button-prev {
-                left: 5%;
-                /* background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23FFCB9A'%2F%3E%3C%2Fsvg%3E") !important; */
-                background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E") !important;
-            }
-            .swiper-button-next {
-                right: 5%;
-                /* background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23FFCB9A'%2F%3E%3C%2Fsvg%3E") !important; */
-                background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E") !important;
-            }
-            .image {
-                width: 200px;
-                height: 200px;
-                overflow: hidden;
-                border-radius: 50%;
-                margin-left: auto;
-                margin-right: auto;
-                display: block;
-                border: 1px solid black;
-            }
-            .image .project-image {
-                width: 100%;
-                height: 100%;
-            }
-            #pic5 {
-                transform: translate(-20px, 0);
-                width: 120%;
-            }
-            button {
-                padding: 0 20px 0 20px;
-                border: solid white;
-                border-width: thin;
-                border-radius: 20px;
-                position: absolute;
-                bottom: 6%;
-                text-transform: uppercase;
-                font-family: 'Raleway', sans-serif;
-                font-size: 24px;
-                color: white;
-                outline: none;
-            }
-            #stop-button {
-                left: 24%;
-                transform: translate(-24%, 0);
-                background-image: linear-gradient(to right, #f2709c, #ff9472);
-            }
-            #start-button {
-                right: 24%;
-                transform: translate(24%, 0);
-                background-image: linear-gradient(to left, #f2709c, #ff9472);
-            }
-            #titlespan {
-                /* width: fit-content; */
-                /* display: inline-block; */
-                /* text-align:center; */
-                /* display: inline-block; */
-                margin: auto;
-                display: table;
-                font-family: Noto Sans, sans-serif;
-                font-size: 70px;
-                border-style: none none double none;
-            }
-            #pagedescription{
-                padding-top: 10px;
-            }
-            #pagedescription p {
-                padding: 5px 20px 0px 20px;
-                text-align: center;
-            }
-            #pagedescription ul {
-                padding-left: 100px;
-                list-style: square;
-            }
-        </style>
     </head>
     <body>
-        <header id="header"></header>
+        <header>
+            <div class="nav-container">
+                <a href="index.html"><img src="images/projects/favicon.png" class="logo" width="46" height="64"></a>
+                <!-- <a href="index.html"><div class="home-first"><p>Ayush</p></div> -->
+                <!-- <div class="home-last"><p>Maganahalli</p></div></a> -->
+                <nav>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog/Timeline</a></li>
+                        <li><a href="TechResume.pdf">Resume</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
         <div id="pagedescription">
             <span id="titlespan">My Projects</span>
-            <p>Here are a couple of the projects I've completed since I began learning CS! Below is a carousel linking to the projects I've completed (those page are all under
-                construction, sorry!), but here's a quick list of them:</p>
-                <ul>
-                    <li><b>Quantitative Trading Algorithms:</b> A project on my journey through learning about quantitative algorithms and using them in Quantopian (and transitioning to other platforms)</li>
-                    <li><b>My Personal Website:</b> How I came about this website, why I made it like this, what I learned from it, and where I plan to go with it</li>
-                    <li><b>Receipt Reader:</b> One of the first projects I did an college, a blend of computer vision and Google API to form a great introduction to CS in general</li>
-                    <li><b>Grade Calculator:</b> A small side project I made just to serve as an initial introduction to using HTML/CSS as well as a convenient way to calculate grades since Berkeley doesn't have one</li>
-                    <li><b>UI/UX Development:</b> The latest project, this was one I developed and used for general members in Codeology</li>
-                </ul>
+            <p>Here are a couple of the projects I've completed since I began learning CS! Below is a carousel linking to the projects I've completed (those pages are all under construction, sorry!), but here's a quick list of them:</p>
+            <ul>
+                <li><b>Quantitative Trading Algorithms:</b> A project on my journey through learning about quantitative algorithms and using them in Quantopian (and transitioning to other platforms)</li>
+                <li><b>My Personal Website:</b> How I came about this website, why I made it like this, what I learned from it, and where I plan to go with it</li>
+                <li><b>Receipt Reader:</b> One of the first projects I did an college, a blend of computer vision and Google API to form a great introduction to CS in general</li>
+                <li><b>Grade Calculator:</b> A small side project I made just to serve as an initial introduction to using HTML/CSS as well as a convenient way to calculate grades since Berkeley doesn't have one</li>
+                <li><b>UI/UX Development:</b> The latest project, this was one I developed and used for general members in Codeology</li>
+            </ul>
             <!-- <p>However, there are even more that you can look forward to in the future! Here's another list that holds a brief description of their outlines:</p>
                 <ul>
                     <li>heh</li>
                 </ul> -->
         </div>
-        <div class="swiper-container" >
+        <div class="swiper-container">
             <button onclick="showButtons()" id="stop-button">Control the Wheel</button>
             <button onclick="hideButtons()" id="start-button">Restart Autoplay</button>
             <div class="swiper-wrapper">
