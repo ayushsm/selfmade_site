@@ -60,13 +60,10 @@ b {
     -webkit-align-items: center;
     align-items: center;
 }
-.swiper-slide-active {
-    opacity: 1;
-}
 .swiper-slide-content:hover {
     cursor: pointer;
 }
-.swiper-slide-content:hover{
+.swiper-slide:hover{
     -moz-transform: scale(1.05);
     -webkit-transform: scale(1.05);
     -o-transform: scale(1.05);
@@ -74,11 +71,19 @@ b {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
 }
-.swiper-slide-content {
+.swiper-slide {
     text-align: center;
     -webkit-transition: transform 0.5s ease-in-out;
     -moz-transition: transform 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out;
+}
+.description {
+    display: none;
+    position: absolute;
+    max-width: 300px;
+}
+.description > p {
+    font-size: medium;
 }
 .swiper-slide-content h1 {
     font-family: 'Bebas Neue', sans-serif;
@@ -153,8 +158,8 @@ button {
     padding-top: 10px;
 }
 #pagedescription p {
-    padding: 5px 20px 0px 20px;
-    text-align: center;
+    padding: 5px 20px 0px 80px;
+    /* text-align: center; */
 }
 #pagedescription ul {
     padding-left: 100px;

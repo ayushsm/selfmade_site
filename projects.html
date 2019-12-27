@@ -4,27 +4,28 @@
         <title>Projects</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Load in general APIs and other useful libraries -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <!-- Swiper APIs -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:thin" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:thin" rel="stylesheet">
         <link rel="stylesheet" href="swiper/dist/css/swiper.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/navigation.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/projects.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 
         <!-- Get Google fonts used on the page -->
         <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Open+Sans|Quicksand|Sulphur+Point&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:thin" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:thin" rel="stylesheet">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+        <!-- Load in pre-built CSS for the page -->
+        <link rel="stylesheet" type="text/css" href="assets/css/navigation.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/projects.css">
     </head>
     <body>
         <header>
@@ -36,7 +37,7 @@
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="projects.html">Projects</a></li>
-                        <li><a href="blog.html">Blog/Timeline</a></li>
+                        <li><a href="blog.html">Timeline</a></li>
                         <li><a href="TechResume.pdf">Resume</a></li>
                     </ul>
                 </nav>
@@ -44,24 +45,26 @@
         </header>
         <div id="pagedescription">
             <span id="titlespan">My Projects</span>
-            <p>Here are a couple of the projects I've completed since I began learning CS! Below is a carousel linking to the projects I've completed (those pages are all under construction, sorry!), but here's a quick list of them:</p>
+            <p>Here are a couple of the projects I've completed since I began learning CS! Below is a carousel linking to the projects I've completed, but here's a quick list of them:</p>
             <ul>
                 <li><b>Quantitative Trading Algorithms:</b> A project on my journey through learning about quantitative algorithms and using them in Quantopian (and transitioning to other platforms)</li>
                 <li><b>My Personal Website:</b> How I came about this website, why I made it like this, what I learned from it, and where I plan to go with it</li>
-                <li><b>Receipt Reader:</b> One of the first projects I did an college, a blend of computer vision and Google API to form a great introduction to CS in general</li>
-                <li><b>Grade Calculator:</b> A small side project I made just to serve as an initial introduction to using HTML/CSS as well as a convenient way to calculate grades since Berkeley doesn't have one</li>
+                <!-- <li><b>Receipt Reader:</b> One of the first projects I did an college, a blend of computer vision and Google API to form a great introduction to CS in general</li> -->
+                <!-- <li><b>Grade Calculator:</b> A small side project I made just to serve as an initial introduction to using HTML/CSS as well as a convenient way to calculate grades since Berkeley doesn't have one</li> -->
                 <li><b>UI/UX Development:</b> The latest project, this was one I developed and used for general members in Codeology</li>
             </ul>
+
+            <p style="text-align: center; padding: 0; font-weight: bolder; font-size: larger;">Click to get a brief description on each project and a link to the repo if you're interested in learning more!</p>
             <!-- <p>However, there are even more that you can look forward to in the future! Here's another list that holds a brief description of their outlines:</p>
                 <ul>
                     <li>heh</li>
                 </ul> -->
         </div>
         <div class="swiper-container">
-            <button onclick="showButtons()" id="stop-button">Control the Wheel</button>
-            <button onclick="hideButtons()" id="start-button">Restart Autoplay</button>
+            <!-- <button onclick="showButtons()" id="stop-button">Control the Wheel</button> -->
+            <!-- <button onclick="hideButtons()" id="start-button">Restart Autoplay</button> -->
             <div class="swiper-wrapper">
-                <div class="swiper-slide" id="1" onclick="window.location.href='construction.html'">
+                <!-- <div class="swiper-slide" id="1" onmouseover="changeText()">
                     <div class="swiper-slide-content">
                         <div class="image">
                             <img src="images/projects/math.jpeg" class="project-image">
@@ -69,17 +72,21 @@
                         <h1>Grade Calculator</h1>
                         <p>You feelin' lucky?</p>
                     </div>
-                </div>
-                <div class="swiper-slide" id="2" onclick="window.location.href='construction.html'">
-                    <div class="swiper-slide-content">
+                </div> -->
+                <div class="swiper-slide" id="2">
+                    <div class="swiper-slide-content intro" id="content-intro">
                         <div class="image">
-                            <img src="images/projects/stocks.jpg" class="project-image">
+                            <img src="images/projects/stocks.jpg" class="project-image" id="pic2">
                         </div>
                         <h1>Quant Trading</h1>
                         <p>Wall Street 2.0</p>
                     </div>
+                    <div class="swiper-slide-content description" id="description">
+                        <p>An introduction to algorithm-based stock trading. Beginning with the Ichimoku Cloud and fundamental trading theories, I learned the basics behind most algorithms used in micro-transactions and day-to-day trading algorithms. From there, I was able to create my own algorithm, resulting in a near $10K net gain using past years' analysis. Eventually, I hope to be able to refine the algorithm to be put into real-time application.</p>
+                        <p><a href="https://github.com/ayushsm/quant-trading">Github Repository</a></p>
+                    </div>
                 </div>
-                <div class="swiper-slide" id="3" onclick="window.location.href='construction.html'">
+                <!-- <div class="swiper-slide" id="3" onmouseover="changeText()">
                     <div class="swiper-slide-content">
                         <div class="image">
                             <img src="images/receipt2.jpg" class="project-image">
@@ -87,17 +94,21 @@
                         <h1>Receipt Reader</h1>
                         <p>The digital age is here</p>
                     </div>   
-                </div>
-                <div class="swiper-slide" id="4" onclick="window.location.href='construction.html'">
+                </div> -->
+                <div class="swiper-slide" id="4">
                     <div class="swiper-slide-content">
                         <div class="image">
-                            <img src="images/projects/favicon.png" class="project-image">
+                            <img src="images/projects/favicon.png" class="project-image" id="pic4">
                         </div>
                         <h1>Website</h1>
                         <p>Too many hours were put into this</p>
-                    </div>   
+                    </div>  
+                    <div class="swiper-slide-content description" id="description">
+                        <p>The journey to finishing the website was a long one! I initially started with a Jekyll based framework that was extremely minimalistic and was based off this <a href="https://github.com/sergiokopplin/indigo">design</a> (huge shoutout to Sergio Kopplin, the creator!). However, to get more hands-on experience with HTML/CSS/JS (frontend) and to have more flexiblity with the site, I pivoted to what you see now! Future changes include incorporating ReactJS and any other useful frameworks.</p>
+                        <p><a href="https://github.com/ayushsm/temp">Github Repository</a></p>
+                    </div> 
                 </div>
-                <div class="swiper-slide" id="5" onclick="window.location.href='construction.html'">
+                <div class="swiper-slide" id="5">
                     <div class="swiper-slide-content">
                         <div class="image">
                             <img src="images/projects/uiux.png" class="project-image" id="pic5">
@@ -105,17 +116,21 @@
                         <h1>UI/UX Dev</h1>
                         <p>The customer is king</p>
                     </div>   
+                    <div class="swiper-slide-content description" id="description">
+                        <p>A project created for Codeology, a CS club at UC Berkeley. I was the project leader and aimed to provide basic UI/UX experience to novice designers. There aren't many opportunities to learn design in on campus and design is so pivotal to the CS industry, so I thought teaching about it would be useful to many people. There aren't many technologies used in the project, but the repo details the project's creation as well as what the teams did with the project.</p>
+                        <p><a href="https://github.com/ayushsm/intro-design">Github Repository</a></p>
+                    </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next" id="next-button"></div>
-            <div class="swiper-button-prev" id="prev-button"></div>
+            <!-- <div class="swiper-pagination"></div> -->
+            <!-- <div class="swiper-button-next" id="next-button"></div> -->
+            <!-- <div class="swiper-button-prev" id="prev-button"></div> -->
         </div>
 
         <script src="swiper/dist/js/swiper.min.js"></script>
         <script>
             var swiper = new Swiper('.swiper-container', {
-                initialSlide: 2,
+                initialSlide: 1,
                 slidesPerView: 'auto',
                 freeMode: true,
                 // mousewheel: true,
@@ -132,10 +147,10 @@
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
-                autoplay: {
-                    delay: 1,
-                },
-                loop: true,
+                // autoplay: {
+                //     delay: 1,
+                // },
+                // loop: true,
             });
         </script>
         <script>
@@ -161,6 +176,21 @@
         <script>
             $(document).ready(function() {
                 $("#header").load("navigation.html");
+            });
+        </script>
+        <script>
+            $('.swiper-slide').on('click', function() {
+                var element = document.getElementById(this.id);
+                var og_content = $(element.children[0]);
+                var new_content = $(element.children[1]);
+                og_content.fadeOut(750);
+                new_content.fadeIn(1500);
+            }).on('mouseleave', function() {
+                var element = document.getElementById(this.id);
+                var og_content = $(element.children[0]);
+                var new_content = $(element.children[1]);
+                new_content.fadeOut(350);
+                og_content.fadeIn(2000);
             });
         </script>
     </body>
